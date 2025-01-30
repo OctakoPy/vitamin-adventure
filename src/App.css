@@ -1,0 +1,67 @@
+/* App.css */
+* {
+  margin: 0; /* Reset default margin */
+  padding: 0; /* Reset default padding */
+  box-sizing: border-box; /* Ensure padding doesn't affect element's total size */
+}
+
+html, body {
+  height: 100%; /* Ensure body takes up the full height of the viewport */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+body {
+  display: flex; /* Flexbox to center everything */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+.app {
+  display: flex; /* Enables Flexbox */
+  flex-direction: column; /* Align items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #2d6a4f;
+  font-family: 'Press Start 2P', cursive; /* Apply special font to title */
+}
+
+.games-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%; /* Ensure container takes up full width */
+  max-width: 800px; /* Limit the width to prevent stretching */
+}
+
+.game-button {
+  background-color: #f4a261;
+  padding: 20px;
+  border-radius: 8px;
+  width: 150px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.5rem;
+  transition: transform 0.2s ease-in-out;
+  font-family: 'Press Start 2P', cursive; /* Apply special font to game buttons */
+}
+
+.game-button:hover {
+  transform: scale(1.1);
+}
+
+.game-button.completed {
+  background-color: #2a9d8f;
+}
+
+.star {
+  font-size: 1.5rem;
+  color: #f1faee;
+  margin-left: 10px;
+}
