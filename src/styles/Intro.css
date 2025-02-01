@@ -104,3 +104,39 @@
         padding: 1.5rem;
     }
 }
+
+.button-container {
+    display: flex;
+    gap: 20px; /* Adds space between the buttons */
+    justify-content: center; /* Centers the buttons horizontally */
+    margin-top: 2rem; /* Adds margin to the top of the button container */
+  }
+  
+  .button-container .start-button {
+    width: auto; /* Adjust width to content */
+    padding: 1rem 2rem; /* Add padding for better click area */
+  }
+
+/* /src/styles/intro.css */
+
+/* Food list styling */
+.food-list ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 1rem;
+  }
+  
+  .food-list li {
+    text-align: left;
+    margin-bottom: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .food-list li::before {
+    content: '•';
+    color: #f4a261; /* Orange color for the bullet point */
+    margin-right: 10px;
+  }
+  
