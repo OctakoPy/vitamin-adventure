@@ -15,6 +15,7 @@ const VitaminD = () => {
   const [playerPosition, setPlayerPosition] = useState({ x: 300, y: 450 });
   const [platforms, setPlatforms] = useState([]);
   const [currentRow, setCurrentRow] = useState(0);
+  const [isRestarting, setIsRestarting] = useState(false);
   const [viewportOffset, setViewportOffset] = useState(0);
   const navigate = useNavigate();
 
@@ -145,18 +146,35 @@ const VitaminD = () => {
   };
 
   const restartGame = () => {
-    setGameStarted(false);
-    setShowSuccess(false);
-    setShowFail(false);
-    setPlayerPosition({ x: COLUMN_POSITIONS[1], y: GAME_HEIGHT - ROW_HEIGHT/2 });
-    setCurrentRow(0);
-    setViewportOffset(0);
+    setIsRestarting(true);  // Step 1: Signal that we're starting to restart
   };
+  
+  // Add this useEffect to handle the actual restart
+  useEffect(() => {
+    if (isRestarting) {
+      // Step 2: Actually restart the game
+      setShowSuccess(false);
+      setShowFail(false);
+      setVitaminDPoints(0);
+      setJumpsRemaining(50);
+      setTimeRemaining(30);
+      setCurrentRow(0);
+      setViewportOffset(0);
+      setPlayerPosition({ x: COLUMN_POSITIONS[1], y: GAME_HEIGHT - ROW_HEIGHT/2 });
+      setPlatforms([]);
+      setGameStarted(false);
+      setIsRestarting(false);  // Reset the restart flag
+    }
+  }, [isRestarting]);
 
   return (
     <div className="vitamin-d-game">
-      {showSuccess ? (
-        <GameOverSuccess restartGame={restartGame} navigateHome={() => navigate('/')} />
+    {showSuccess ? (
+      <GameOverSuccess 
+        restartGame={restartGame} 
+        navigateHome={() => navigate('/')} 
+        vitaminDPoints={vitaminDPoints}  // Add this line
+      />
       ) : showFail ? (
         <GameOverFail restartGame={restartGame} navigateHome={() => navigate('/')} />
       ) : !gameStarted ? (
