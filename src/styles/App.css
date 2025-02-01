@@ -60,8 +60,12 @@ body {
   background-color: #2a9d8f;
 }
 
-.star {
-  font-size: 1.5rem;
-  color: #f1faee;
-  margin-left: 10px;
+.star-icon {
+  width: 20px;   /* Adjust width */
+  height: 20px;  /* Adjust height */
+  margin-left: 5px;  /* Optional: Adds space between the vitamin name and the star */
+}
+
+.footer {
+  margin-top: 20px;  /* Adjust the value to the desired spacing */
 }

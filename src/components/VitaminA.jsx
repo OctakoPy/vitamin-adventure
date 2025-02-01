@@ -5,7 +5,7 @@ import IntroPage from './VitaminAIntroPage';
 import GameOverSuccess from './VitaminAGameOverSuccess';
 import GameOverFail from './VitaminAGameOverFail';
 
-const VitaminA = () => {
+const VitaminA = ({ setCompletedGames }) => {
   const [goodFoodsCollected, setGoodFoodsCollected] = useState(0);
   const [visionCleared, setVisionCleared] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
@@ -106,7 +106,12 @@ const VitaminA = () => {
   return (
     <div className="vitamin-a-game" style={{ position: 'relative' }}>
       {showSuccess ? (
-        <GameOverSuccess restartGame={restartGame} navigateHome={() => navigate('/')} />
+        <GameOverSuccess
+          restartGame={restartGame}
+          navigateHome={() => navigate('/')}
+          setCompletedGames={setCompletedGames}  // Pass it down to GameOverSuccess
+          vitamin="vitaminA"  // Pass the vitamin name to identify which game was completed
+        />
       ) : showFail ? (
         <GameOverFail restartGame={restartGame} navigateHome={() => navigate('/')} />
       ) : (
