@@ -1,0 +1,95 @@
+.game-wrapper {
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.game-stats {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.viewport {
+  width: 800px;
+  height: 240px;  /* Increased from 180px to accommodate 4 lanes */
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #333;
+  background: #f0f0f0;
+}
+
+.race-track {
+  height: 240px;  /* Increased from 180px to match viewport */
+  position: relative;
+  transition: transform 0.05s linear;
+}
+
+.lane {
+  height: 60px;  /* Keep same height per lane */
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.runner {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+}
+
+.player {
+  background-color: #FFD700;
+  z-index: 2;
+}
+
+.player .eyes {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.eye {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: black;
+  border-radius: 50%;
+  top: 8px;
+}
+
+.eye:first-child {
+  left: 6px;
+}
+
+.eye:last-child {
+  right: 6px;
+}
+
+.food {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 20px;
+}
+
+.distance-marker {
+  position: absolute;
+  top: -20px;
+  font-size: 12px;
+  color: #666;
+}
+
+.finish-line {
+  position: absolute;
+  height: 240px;  /* Increased from 180px to match viewport */
+  width: 10px;
+  background: repeating-linear-gradient(
+    45deg,
+    #000,
+    #000 10px,
+    #fff 10px,
+    #fff 20px
+  );
+  z-index: 1;
+}
