@@ -1,0 +1,106 @@
+/* /src/styles/intro.css */
+
+.intro-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #2b2d42, #1a1b2e);
+    text-align: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    color: #f1faee;
+}
+
+/* Main title - keeping the pixel font */
+.intro-page h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    color: #f4a261;
+    margin-bottom: 2rem;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+    line-height: 1.4;
+    max-width: 800px;
+}
+
+/* Secondary headers - pixel font but smaller */
+.intro-page h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.3rem;
+    color: #e76f51;
+    margin: 2rem 0 1rem;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Paragraphs - using Roboto for better readability */
+.intro-page p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+    color: #f1faee;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+}
+
+/* Container for better content organization */
+.intro-content {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.start-button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    background-color: #f4a261;
+    color: #2b2d42;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 0 #e76f51;
+}
+
+.start-button:hover {
+    background-color: #e76f51;
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #c5532d;
+}
+
+.start-button:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .intro-page h1 {
+        font-size: 1.5rem;
+    }
+    
+    .intro-page h2 {
+        font-size: 1rem;
+    }
+    
+    .intro-page p {
+        font-size: 1rem;
+    }
+    
+    .start-button {
+        font-size: 1rem;
+        padding: 0.8rem 1.6rem;
+    }
+    
+    .intro-content {
+        padding: 1.5rem;
+    }
+}
