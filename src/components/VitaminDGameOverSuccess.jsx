@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const GameOverSuccess = ({ restartGame, navigateHome, setCompletedGames }) => {
+const GameOverSuccess = ({ restartGame, navigateHome, setCompletedGames, vitaminDPoints }) => {
   useEffect(() => {
     setCompletedGames(prev => ({ ...prev, vitaminD: true }));
   }, [setCompletedGames]);
@@ -8,7 +8,7 @@ const GameOverSuccess = ({ restartGame, navigateHome, setCompletedGames }) => {
   return (
     <div className="game-over">
       <h1>Hooray! You got enough sunlight!</h1>
-      <p className="score">You collected Vitamin D points!</p>
+      <p className="score">You collected {vitaminDPoints} Vitamin D points!</p>
       <button className="restart-button" onClick={restartGame}>
         Play Again
       </button>

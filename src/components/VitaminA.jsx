@@ -25,11 +25,11 @@ const VitaminA = ({ setCompletedGames }) => {
   ];
 
   const badFoods = [
-    { image: '/assets/junk1.png', name: 'Soda' },
-    { image: '/assets/junk2.png', name: 'Candy' },
-    { image: '/assets/junk3.png', name: 'Pizza' },
-    { image: '/assets/junk4.png', name: 'Ice Cream' },
-    { image: '/assets/junk5.png', name: 'Chips' }
+    { image: '/assets/junk1.png', name: 'Fries' },
+    { image: '/assets/junk2.png', name: 'Burger' },
+    { image: '/assets/junk3.png', name: 'Hot Dog' },
+    { image: '/assets/junk4.png', name: 'Canned Food' },
+    { image: '/assets/junk5.png', name: 'Ice Cream' }
   ];
 
   useEffect(() => {

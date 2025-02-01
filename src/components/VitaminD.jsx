@@ -201,23 +201,25 @@ const VitaminD = ({ setCompletedGames }) => {
           </div>
 
           <div className="game-area">
-          <div className="sunlight-bar">
-            <img src="/assets/sun.png" alt="sun" className="sun-icon" />
-            <div className="sunlight-segments">
-              {[...Array(10)].map((_, index) => (
-                <div
-                  key={index}
-                  className="sunlight-segment"
-                  style={{
-                    backgroundColor: index < vitaminDPoints 
-                      ? `rgb(255, ${215 + (index * 4)}, 0)` 
-                      : 'rgba(255, 255, 255, 0.1)',
-                    opacity: index < vitaminDPoints ? 1 : 0.3
-                  }}
-                />
-              ))}
-            </div>
-          </div>
+          <div className="sunlight-bar-container">  {/* New container div */}
+    <img src="/assets/sun.png" alt="sun" className="sun-icon" />
+    <div className="sunlight-bar">
+      <div className="sunlight-segments">
+        {[...Array(10)].map((_, index) => (
+          <div
+            key={index}
+            className="sunlight-segment"
+            style={{
+              backgroundColor: index < vitaminDPoints 
+                ? `rgb(255, ${215 + (index * 4)}, 0)` 
+                : 'rgba(255, 255, 255, 0.1)',
+              opacity: index < vitaminDPoints ? 1 : 0.3
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  </div>
             <div className="game-world" style={{
               transform: `translateY(${viewportOffset}px)`,
               transition: 'transform 0.3s ease-out'

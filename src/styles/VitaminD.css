@@ -52,11 +52,8 @@
     background: linear-gradient(180deg, #87CEEB 0%, #4A90E2 100%);
 }
 
+/* Remove the positioning from .sunlight-bar */
 .sunlight-bar {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
     width: 40px;
     height: 300px;
     background: rgba(255, 255, 255, 0.3);
@@ -65,16 +62,29 @@
     flex-direction: column-reverse;
     overflow: hidden;
     border: 3px solid rgba(255, 255, 255, 0.8);
-    z-index: 1000;
 }
 
+/* Update the container positioning */
+.sunlight-bar-container {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40px;
+}
+
+/* Update sun icon positioning */
 .sun-icon {
     position: absolute;
     top: -40px;
-    left: 50%;
-    transform: translateX(-50%);
     width: 50px;
     height: 50px;
+    z-index: 1001;
+    left: -5px; /* Adjust this value to center the sun over the bar */
 }
 
 .sunlight-segments {

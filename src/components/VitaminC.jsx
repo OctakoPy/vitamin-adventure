@@ -25,7 +25,7 @@ const VitaminC = ({ setCompletedGames }) => {
     { image: '/assets/pineapple.png', name: 'Pineapple' }
   ];
 
-  const badFoods = Array.from({ length: 20 }, (_, i) => ({
+  const badFoods = Array.from({ length: 13 }, (_, i) => ({
     image: `/assets/junk${i + 1}.png`,
     name: `Junk Food ${i + 1}`
   }));
