@@ -1,12 +1,24 @@
-const GameOverSuccess = ({ restartGame, navigateHome, vitaminDPoints }) => {
+import { useEffect } from 'react';
+
+const GameOverSuccess = ({ restartGame, navigateHome, setCompletedGames }) => {
+  useEffect(() => {
+    setCompletedGames(prev => ({ ...prev, vitaminD: true }));
+  }, [setCompletedGames]);
+
   return (
     <div className="game-over">
       <h1>Hooray! You got enough sunlight!</h1>
-      <p className="score">You collected {vitaminDPoints} Vitamin D points!</p>
+      <p className="score">You collected Vitamin D points!</p>
       <button className="restart-button" onClick={restartGame}>
         Play Again
       </button>
-      <button className="home-button" onClick={navigateHome}>
+      <button
+        className="home-button"
+        onClick={() => {
+          setCompletedGames(prev => ({ ...prev, vitaminD: true }));
+          navigateHome();
+        }}
+      >
         Return to Homepage
       </button>
     </div>

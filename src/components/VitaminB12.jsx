@@ -5,7 +5,7 @@ import VitaminBIntroPage from './VitaminBIntroPage';
 import VitaminBGameOverSuccess from './VitaminBGameOverSuccess';
 import VitaminBGameOverFail from './VitaminBGameOverFail';
 
-const VitaminB12 = () => {
+const VitaminB12 = ({ setCompletedGames }) => {
   const navigate = useNavigate();
   const TRACK_LENGTH = 5000;
   const VIEW_WIDTH = 800;
@@ -360,7 +360,7 @@ const VitaminB12 = () => {
         <VitaminBIntroPage startGame={startGame} />
       ) : gameOver ? (
         gameWon ? (
-          <VitaminBGameOverSuccess restartGame={restartGame} navigateHome={() => navigate('/')} />
+          <VitaminBGameOverSuccess restartGame={restartGame} navigateHome={() => navigate('/')} setCompletedGames={setCompletedGames} />
         ) : (
           <VitaminBGameOverFail restartGame={restartGame} navigateHome={() => navigate('/')} />
         )

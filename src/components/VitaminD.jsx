@@ -5,7 +5,7 @@ import IntroPage from './VitaminDIntroPage';
 import GameOverSuccess from './VitaminDGameOverSuccess';
 import GameOverFail from './VitaminDGameOverFail';
 
-const VitaminD = () => {
+const VitaminD = ({ setCompletedGames }) => {
   const [vitaminDPoints, setVitaminDPoints] = useState(0);
   const [jumpsRemaining, setJumpsRemaining] = useState(50);
   const [timeRemaining, setTimeRemaining] = useState(30);
@@ -173,7 +173,8 @@ const VitaminD = () => {
       <GameOverSuccess 
         restartGame={restartGame} 
         navigateHome={() => navigate('/')} 
-        vitaminDPoints={vitaminDPoints}  // Add this line
+        vitaminDPoints={vitaminDPoints}
+        setCompletedGames={setCompletedGames}  // Add this line
       />
       ) : showFail ? (
         <GameOverFail restartGame={restartGame} navigateHome={() => navigate('/')} />

@@ -4,7 +4,7 @@ import IntroPage from './VitaminCIntroPage';
 import GameOverSuccess from './VitaminCGameOverSuccess';
 import GameOverFail from './VitaminCGameOverFail';
 
-const VitaminC = () => {
+const VitaminC = ({ setCompletedGames }) => {
   const navigate = useNavigate();
   const [gameStarted, setGameStarted] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
@@ -214,7 +214,7 @@ const VitaminC = () => {
     return (
       <div className="vitamin-c-game">
         {showSuccess ? (
-          <GameOverSuccess restartGame={restartGame} navigateHome={() => navigate('/')} />
+          <GameOverSuccess restartGame={restartGame} navigateHome={() => navigate('/')} setCompletedGames={setCompletedGames} />
         ) : showFail ? (
           <GameOverFail restartGame={restartGame} navigateHome={() => navigate('/')} />
         ) : !gameStarted ? (
